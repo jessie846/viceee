@@ -6931,13 +6931,13 @@
       "frequency": 118250,
       "full_name": "Boston Approach",
       "scope_char": "N",
-      "sector_id": "1N"
+      "sector_id": "1R"
     },
     "BOS_S_APP": {
       "frequency": 120600,
       "full_name": "Boston Approach",
       "scope_char": "S",
-      "sector_id": "1S"
+      "sector_id": "1M"
     },
     "BOS_F_APP": {
       "frequency": 126500,
@@ -7292,11 +7292,11 @@
               "BOS_B_APP": {"backup": "BOS_N_APP", "arrivals": ["DREEM2.BED", "DREEM2.LWM", "DREEM2.BVY", "ZELKA2.BED", "ZELKA2.LWM", "ZELKA2.BVY"]},
               "BOS_L_APP": {"backup": "BOS_S_APP"},
               "BOS_U_APP": {"backup": "BOS_DEP",  "arrivals": ["WOONS.3K", "WOONS.5K", "WOONS.7K"]},
-                "MHT_Z_APP": {"backup": "BOS_DEP", "departures": ["KMHT"]},
-                "MHT_J_APP": {"backup": "MHT_Z_APP"},
-                "MHT_E_APP": {"backup": "MHT_Z_APP", "arrivals":["ENE"]},
-                "MHT_P_APP": {"backup": "MHT_E_APP", "departures":["KPSM"]},
-                "MHT_W_APP": {"backup": "MHT_Z_APP", "arrivals": ["CON", "GDM", "ROZZE2"]},
+              "MHT_Z_APP": {"primary": true},
+              "MHT_J_APP": {"backup": "MHT_Z_APP", "departures": ["KMHT"]},
+              "MHT_E_APP": {"backup": "MHT_Z_APP", "arrivals":["ENE"]},
+              "MHT_P_APP": {"backup": "MHT_E_APP", "departures":["KPSM"]},
+              "MHT_W_APP": {"backup": "MHT_J_APP", "arrivals": ["CON", "GDM", "ROZZE2"]},
                 "ACK_N_APP": {"arrivals": ["DEEPO1","NEWBE3"], "backup": "BOS_DEP"},
                 "ACK_DEP": {"departures": ["KACK","KMVY"], "backup": "ACK_N_APP"},
                 "ACK_O_APP": {"departures": ["KACK"],  "backup": "ACK_DEP"},
@@ -8136,10 +8136,11 @@
                 "BOS_S_APP": {"backup": "BOS_N_APP", "arrivals": ["ROBUC3","FREDO.6K",  "FREDO.8K"]},
                 "BOS_F_APP": {"backup": "BOS_N_APP"},
                 "BOS_I_APP": {"backup": "BOS_F_APP"},
-                "MHT_Z_APP": {"backup" : "BOS_DEP", "departures": ["KMHT"]},
-                "MHT_J_APP": {"backup": "MHT_Z_APP"},
+                "MHT_Z_APP": {"primary": true},
+                "MHT_J_APP": {"backup": "MHT_Z_APP", "departures": ["KMHT"]},
                 "MHT_E_APP": {"backup": "MHT_Z_APP", "arrivals":["ENE"]},
-                "MHT_W_APP": {"backup": "MHT_Z_APP", "arrivals": ["CON", "GDM", "ROZZE2"]}
+                "MHT_P_APP": {"backup": "MHT_E_APP", "departures":["KPSM"]},
+                "MHT_W_APP": {"backup": "MHT_J_APP", "arrivals": ["CON", "GDM", "ROZZE2"]}
             }
         },
         "controllers": [

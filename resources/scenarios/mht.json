@@ -861,8 +861,8 @@
             "solo_controller": "MHT_Z_APP",
             "multi_controllers": {
                 "default": {
-                    "MHT_J_APP": {"primary": true, "departures": ["KMHT"]},
-                    "MHT_Z_APP": {"backup": "MHT_J_APP"},
+                    "MHT_J_APP": {"primary": true},
+                    "MHT_Z_APP": {"backup": "MHT_J_APP","departures": ["KMHT"]},
                     "MHT_E_APP": {"backup": "MHT_Z_APP", "arrivals":["ENE"]},
                     "MHT_P_APP": {"backup": "MHT_E_APP", "departures":["KPSM"]},
                     "MHT_W_APP": {"backup": "MHT_Z_APP", "arrivals": ["CON", "GDM", "ROZZE2"]}
@@ -928,11 +928,11 @@
             "solo_controller": "MHT_Z_APP",
             "multi_controllers": {
                 "default": {
-                    "MHT_Z_APP": {"primary": true, "departures": ["KMHT"]},
-                    "MHT_J_APP": {"backup": "MHT_Z_APP"},
+                    "MHT_Z_APP": {"primary": true},
+                    "MHT_J_APP": {"backup": "MHT_Z_APP", "departures": ["KMHT"]},
                     "MHT_E_APP": {"backup": "MHT_Z_APP", "arrivals":["ENE"]},
                     "MHT_P_APP": {"backup": "MHT_E_APP", "departures":["KPSM"]},
-                    "MHT_W_APP": {"backup": "MHT_Z_APP", "arrivals": ["CON", "GDM", "ROZZE2"]}
+                    "MHT_W_APP": {"backup": "MHT_J_APP", "arrivals": ["CON", "GDM", "ROZZE2"]}
                 }
             },
             "controllers": [
