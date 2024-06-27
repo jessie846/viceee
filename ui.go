@@ -214,6 +214,8 @@ var UITextColor RGB = RGB{R: 0.85, G: 0.85, B: 0.85}
 var UITextHighlightColor RGB = RGBFromHex(0xB2B338)
 var UIErrorColor RGB = RGBFromHex(0xE94242)
 
+var urlOpened = false
+
 func imguiInit() *imgui.Context {
 	context := imgui.CreateContext(nil)
 	imgui.CurrentIO().SetIniFilename("")
@@ -403,10 +405,13 @@ func drawUI(p Platform, r Renderer, w *World, eventStream *EventStream, stats *S
 			imgui.SetTooltip("Display information about vice")
 		}
 		if imgui.BeginMenu(FontAwesomeIconDiscord) {
-			browser.OpenURL("https://discord.gg/y993vgQxhY")
+			// Check the flag before opening the URL
+			if !urlOpened {
+				browser.OpenURL("https://discord.gg/y993vgQxhY")
+				urlOpened = true // Set the flag to true after opening the URL
+			}
 			imgui.EndMenu()
 		}
-
 		if imgui.Button(Select(platform.IsFullScreen(), FontAwesomeIconCompressAlt, FontAwesomeIconExpandAlt)) {
 			platform.EnableFullScreen(!platform.IsFullScreen())
 		}
