@@ -11771,6 +11771,24 @@
     }
   },
   {
+    "icao": "bma",
+    "name": "BermudAir",
+    "callsign": {
+      "name": "Gosling",
+      "callsignFormats": [
+        "###"
+      ]
+    },
+    "fleets": {
+      "default": [
+        [
+          "E75S",
+          2
+        ]
+      ]
+    }
+  },
+  {
     "icao": "bms",
     "name": "Blue Air",
     "callsign": {
@@ -21627,6 +21645,29 @@
     }
   },
   {
+    "icao": "fpy",
+    "name": "Fly Play",
+    "callsign": {
+      "name": "Player",
+      "callsignFormats": [
+        "#@",
+        "##@"
+      ]
+    },
+    "fleets": {
+      "default": [
+        [
+          "A20N",
+          6
+        ],
+        [
+          "A21N",
+          4
+        ]
+      ]
+    }
+  },
+  {
     "icao": "fpo",
     "name": "ASL Airlines France",
     "callsign": {
@@ -24182,6 +24223,93 @@
     }
   },
   {
+    "icao": "ity",
+    "name": "ITA Airways",
+    "callsign": {
+      "name": "Itarrow",
+      "callsignFormats": [
+        "##",
+        "###"
+      ]
+    },
+    "fleets": {
+      "default": [
+        [
+          "A20N",
+          17
+        ],
+        [
+          "A21N",
+          5
+        ],
+        [
+          "A319",
+          11
+        ],
+        [
+          "A320",
+          25
+        ],
+        [
+          "BCS1",
+          6
+        ],
+        [
+          "BCS3",
+          9
+        ],
+        [
+          "A332",
+          7
+        ],
+        [
+          "A339",
+          10
+        ],
+        "A359",
+        6
+      ],
+      "long": [
+        [
+          "A332",
+          7
+        ],
+        [
+          "A339",
+          10
+        ],
+        "A359",
+        6
+      ],
+      "short": [
+        [
+          "A20N",
+          17
+        ],
+        [
+          "A21N",
+          5
+        ],
+        [
+          "A319",
+          11
+        ],
+        [
+          "A320",
+          25
+        ],
+        [
+          "BCS1",
+          6
+        ],
+        [
+          "BCS3",
+          9
+        ]
+      ]
+    }
+  },
+  {
     "icao": "i",
     "name": "General Aviation Italy",
     "callsign": {
@@ -26230,21 +26358,29 @@
       "default": [
         [
           "A320",
-          130
+          129
         ],
         [
           "A321",
-          56
+          63
+        ],
+        [
+          "BCS3",
+          31
         ],
         [
           "E190",
-          60
+          42
+        ],
+        [
+          "A21N",
+          35
         ]
       ],
       "long": [
         [
-          "A321",
-          56
+          "A21N",
+          35
         ]
       ]
     }
@@ -34354,6 +34490,14 @@
         [
           "E170",
           188
+        ],
+        [
+          "E75S",
+          52
+        ],
+        [
+          "E75L",
+          23
         ]
       ]
     }
@@ -47992,6 +48136,38 @@
         [
           "E55P",
           1
+        ]
+      ]
+    }
+  },
+  {
+    "icao": "RZO",
+    "name": "Azores Airlines",
+    "callsign": {
+      "name": "Air Azores",
+      "callsignFormats": [
+        "###"
+      ]
+    },
+    "fleets": {
+      "default": [
+        [
+          "A20N",
+          2
+        ],
+        [
+          "A21N",
+          5
+        ],
+        [
+          "A320",
+          3
+        ]
+      ],
+      "long": [
+        [
+          "A21N",
+          5
         ]
       ]
     }
