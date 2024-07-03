@@ -33768,6 +33768,28 @@
     }
   },
   {
+    "icao": "rvf",
+    "name": "New Pacific Airlines",
+    "callsign": {
+      "name": "Raven Flight",
+      "callsignFormats": [
+        "###"
+      ]
+    },
+    "fleets": {
+      "default": [
+        [
+        "DH8A",
+        9
+      ],
+      [
+        "DH8C",
+        1
+      ]
+    ]
+    }
+  },
+  {
     "icao": "ra",
     "name": "General Aviation Russian Federation",
     "callsign": {
@@ -44263,6 +44285,46 @@
         [
           "B737",
           7
+        ]
+      ]
+    }
+  },
+  {
+    "icao": "WSN",
+    "name": "Advanced Air",
+    "callsign": {
+      "name": "Wingspan",
+      "callsignFormats": [
+        "#",
+        "##",
+        "###"
+      ]
+    },
+    "fleets": {
+      "default": [
+        [
+          "B350",
+          10
+        ],
+        [
+          "CL30",
+          1
+        ],
+        [
+          "J328",
+          4
+        ],
+        [
+          "LJ45",
+          1
+        ],
+        [
+          "LJ75",
+          1
+        ],
+        [
+          "PC12",
+          4
         ]
       ]
     }
