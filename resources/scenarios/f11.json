@@ -3874,7 +3874,7 @@
     }
   },
   "arrival_groups": {
-    "ALYNA4": [
+    "ALYNA4.MCON": [
       {
         "airlines": {
           "KMCO": [
@@ -3923,7 +3923,80 @@
               "airport": "EDDF",
               "icao": "DLH"
             }
-          ],
+          ]
+        },
+        "assigned_altitude": 14000,
+        "initial_altitude": 14000,
+        "initial_controller": "MIA_23_CTR",
+        "initial_speed": 300,
+        "star": "ALYNA4",
+        "speed_restriction": 250,
+        "waypoints": "BEAUX/ho SURFR/a14000 ALYNA HIGGZ/a10000-12000/s250 VOSSS/a8000+/s230 SUNDE/a6000+ CUBAL/a5000/s210/h186"
+      }
+    ],
+    "ALYNA4.MCOS": [
+      {
+        "airlines": {
+          "KMCO": [
+            {
+              "airport": "KJFK",
+              "fleet": "short",
+              "icao": "AAL"
+            },
+            {
+              "airport": "KJFK",
+              "fleet": "short",
+              "icao": "DAL"
+            },
+            {
+              "airport": "KJFK",
+              "icao": "JBU"
+            },
+            {
+              "airport": "KEWR",
+              "fleet": "short",
+              "icao": "UAL"
+            },
+            {
+              "airport": "KBOS",
+              "fleet": "short",
+              "icao": "DAL"
+            },
+            {
+              "airport": "KBOS",
+              "icao": "JBU"
+            },
+            {
+              "airport": "CYHZ",
+              "fleet": "jfk",
+              "icao": "WJA"
+            },
+            {
+              "airport": "EGCC",
+              "icao": "VIR"
+            },
+            {
+              "airport": "EIDW",
+              "icao": "EIN"
+            },
+            {
+              "airport": "EDDF",
+              "icao": "DLH"
+            }
+          ]
+        },
+        "assigned_altitude": 14000,
+        "initial_altitude": 14000,
+        "initial_controller": "MIA_23_CTR",
+        "initial_speed": 300,
+        "star": "ALYNA4",
+        "speed_restriction": 250,
+        "waypoints": "BEAUX/ho SURFR/a14000 ALYNA BANYA/a7000/s210/h246"
+      }
+    ],
+    "ALYNA4.SAT": [
+      {
+        "airlines": {
           "KSFB": [
             {
               "airport": "KISP",
@@ -3966,36 +4039,12 @@
           ]
         },
         "assigned_altitude": 14000,
-        "initial_altitude": 18000,
+        "initial_altitude": 14000,
         "initial_controller": "MIA_23_CTR",
         "initial_speed": 300,
         "star": "ALYNA4",
-        "runway_waypoints": {
-            "KMCO": {
-                "17L": "SURFR/a14000 ALYNA BANYA/a7000/s210/h246",
-                "17R": "SURFR/a14000 ALYNA BANYA/a7000/s210/h246",
-                "18L": "SURFR/a14000 ALYNA BANYA/a7000/s210/h246",
-                "18R": "SURFR/a14000 ALYNA BANYA/a7000/s210/h246",
-                "35R": "SURFR/a14000 ALYNA HIGGZ/a10000-12000/s250 VOSSS/a8000+/s230 SUNDE/a6000+ CUBAL/a5000/s210/h186",
-                "35L": "SURFR/a14000 ALYNA HIGGZ/a10000-12000/s250 VOSSS/a8000+/s230 SUNDE/a6000+ CUBAL/a5000/s210/h186",
-                "36R": "SURFR/a14000 ALYNA HIGGZ/a10000-12000/s250 VOSSS/a8000+/s230 SUNDE/a6000+ CUBAL/a5000/s210/h186",
-                "36L": "SURFR/a14000 ALYNA HIGGZ/a10000-12000/s250 VOSSS/a8000+/s230 SUNDE/a6000+ CUBAL/a5000/s210/h186"
-            },
-            "KSFB": {
-                "27L": "SURFR/a14000 ALYNA BUDLE/a6000/h263",
-                "9R": "SURFR/a14000 ALYNA BUDLE/a6000/h263"
-            },
-            "KISM": {
-              "15": "SURFR/a14000 ALYNA BUDLE/a6000/h263",
-              "33": "SURFR/a14000 ALYNA BUDLE/a6000/h263"
-            },
-            "KORL": {
-              "7": "SURFR/a14000 ALYNA BUDLE/a6000/h263",
-              "25": "SURFR/a14000 ALYNA BUDLE/a6000/h263"
-            }
-        },
         "speed_restriction": 250,
-        "waypoints": "BEAUX/ho SURFR/a14000"
+        "waypoints": "BEAUX/ho SURFR/a14000 ALYNA BUDLE/a6000/h263"
       }
     ],
     "EAST_COAST_OVERFLIGHTS": [
@@ -10953,7 +11002,7 @@
       "solo_controller": "MCO_E_DEP",
       "multi_controllers": {
         "default": {
-          "MCO_E_DEP": {"primary": true, "departures": ["KMCO/17R"], "arrivals": ["ALYNA4", "DADES1"]},
+          "MCO_E_DEP": {"primary": true, "departures": ["KMCO/17R"], "arrivals": ["ALYNA4.MCOS","ALYNA4.SAT", "DADES1"]},
           "MCO_W_DEP": {"backup": "MCO_E_DEP", "departures": ["KMCO/18L"]},
           "MCO_D_APP": {"backup": "MCO_E_DEP", "departures": ["KISM", "KORL"],"arrivals": ["GOOFY7", "JOKRS3"]},
           "MCO_M_APP": {"backup": "MCO_W_DEP"},
@@ -11198,7 +11247,7 @@
       "solo_controller": "MCO_E_DEP",
       "multi_controllers": {
         "default": {
-          "MCO_E_DEP": {"primary": true, "departures": ["KMCO/35L"], "arrivals": ["ALYNA4", "DADES1"]},
+          "MCO_E_DEP": {"primary": true, "departures": ["KMCO/35L"], "arrivals": ["ALYNA4.MCOS","ALYNA4.SAT", "DADES1"]},
           "MCO_W_DEP": {"backup": "MCO_E_DEP", "departures": ["KMCO/36R"]},
           "MCO_D_APP": {"backup": "MCO_W_DEP", "departures": ["KISM"], "arrivals": ["GOOFY7", "JOKRS3"]},
           "MCO_M_APP": {"backup": "MCO_W_DEP"},
