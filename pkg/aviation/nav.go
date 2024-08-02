@@ -1738,7 +1738,7 @@ func (nav *Nav) AssignSpeed(speed float32, afterAltitude bool) PilotResponse {
 	var response string
 	if speed == 0 {
 		nav.Speed = NavSpeed{}
-		response = "cancel speed restrictions"
+		response = "resume normal speed"
 	} else if float32(speed) < nav.Perf.Speed.Landing {
 		response = fmt.Sprintf("unable. Our minimum speed is %.0f knots", nav.Perf.Speed.Landing)
 	} else if float32(speed) > maxIAS {

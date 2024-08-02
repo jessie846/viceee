@@ -371,7 +371,7 @@ func (sd *Dispatcher) RunAircraftCommands(cmds *AircraftCommandsArgs, result *Ai
 					rewriteError(err)
 					return nil
 				}
-			} else if command == "CVS" {
+			} else if command == "CVIA" {
 				if err := sim.ClimbViaSID(token, callsign); err != nil {
 					rewriteError(err)
 					return nil
@@ -452,7 +452,7 @@ func (sd *Dispatcher) RunAircraftCommands(cmds *AircraftCommandsArgs, result *Ai
 			}
 
 		case 'D':
-			if command == "DVS" {
+			if command == "DVIA" {
 				if err := sim.DescendViaSTAR(token, callsign); err != nil {
 					rewriteError(err)
 					return nil
@@ -628,8 +628,13 @@ func (sd *Dispatcher) RunAircraftCommands(cmds *AircraftCommandsArgs, result *Ai
 			}
 
 		case 'S':
-			if len(command) == 1 {
-				// Cancel speed restrictions
+			if command == "SS" {
+				if err := sim.SaySpeed(token, callsign); err != nil {
+					rewriteError(err)
+					return nil
+				}
+			}
+			if command == "RNS" {
 				if err := sim.AssignSpeed(token, callsign, 0, false); err != nil {
 					rewriteError(err)
 					return nil
@@ -641,11 +646,6 @@ func (sd *Dispatcher) RunAircraftCommands(cmds *AircraftCommandsArgs, result *Ai
 				}
 			} else if command == "SMAX" {
 				if err := sim.MaintainMaximumForward(token, callsign); err != nil {
-					rewriteError(err)
-					return nil
-				}
-			} else if command == "SS" {
-				if err := sim.SaySpeed(token, callsign); err != nil {
 					rewriteError(err)
 					return nil
 				}

@@ -1511,8 +1511,8 @@ Either one or both of *A* and *S* may be specified.`, "*CCAMRN/A110+*"},
 	[3]string{"*CSI_appr", `"Cleared straight-in _appr_ approach.`, "*CSII6*"},
 	[3]string{"*I*", `"Intercept the localizer."`, "*I*"},
 	[3]string{"*ID*", `"Ident."`, "*ID*"},
-	[3]string{"*CVS*", `"Climb via the SID"`, "*CVS*"},
-	[3]string{"*DVS*", `"Descend via the STAR"`, "*CVS*"},
+	[3]string{"*CVIA*", `"Climb via the SID"`, "*CVIA*"},
+	[3]string{"*DVIA*", `"Descend via the STAR"`, "*DVIA*"},
 }
 
 var starsCommands = [][2]string{
