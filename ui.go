@@ -1470,16 +1470,17 @@ func uiToggleShowKeyboardWindow() {
 }
 
 var primaryAcCommands = [][3]string{
-	[3]string{"*H_hdg", `"Fly heading _hdg_." If no heading is given, "fly present heading".`,
+	[3]string{"*FH_hdg", `"Fly heading _hdg_." If no heading is given, "fly present heading".`,
 		"*H050*, *H*"},
+	[3]string{"*FPH", `"Fly present heading".`, "*FPH*"},
 	[3]string{"*D_fix", `"Proceed direct _fix_".`, "*DWAVEY*"},
 	[3]string{"*C_alt", `"Climb and maintain _alt_".`, "*C170*"},
 	[3]string{"*TC_alt", `"After reaching speed _kts_, climb and maintain _alt_", where _kts_ is a previously-assigned speed.`, "*TC170*"},
 	[3]string{"*D_alt", `"Descend and maintain _alt_".`, "*D20*"},
 	[3]string{"*TD_alt", `"Descend and maintain _alt_ after reaching _kts_ knots", where _kts_ is a previously-assigned
 speed. (*TD* = 'then descend')`, "*TD20*"},
-	[3]string{"*S_kts", `"Reduce/increase speed to _kts_."
-If no speed is given, "cancel speed restrictions".`, "*S210*, *S*"},
+	[3]string{"*S_kts", `"Reduce/increase speed to _kts_.`, "*S210*"},
+	[3]string{"*RNS", `"Resume Normal Speed".`, "*RNS*"},
 	[3]string{"*TS_kts", `"After reaching _alt_, reduce/increase speed to _kts_", where _alt_ is a previously-assigned
 altitude. (*TS* = 'then speed')`, "*TS210*"},
 	[3]string{"*E_appr", `"Expect the _appr_ approach."`, "*EI2L*"},

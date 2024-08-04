@@ -5,6 +5,7 @@
 package sim
 
 import (
+	"fmt"
 	"strconv"
 	"strings"
 
@@ -527,9 +528,7 @@ func (sd *Dispatcher) RunAircraftCommands(cmds *AircraftCommandsArgs, result *Ai
 					rewriteError(err)
 					return nil
 				}
-			}
-		case 'H':
-			if len(command) == 1 {
+			} else if command == "FPH" {
 				if err := sim.AssignHeading(&HeadingArgs{
 					ControllerToken: token,
 					Callsign:        callsign,
@@ -538,19 +537,24 @@ func (sd *Dispatcher) RunAircraftCommands(cmds *AircraftCommandsArgs, result *Ai
 					rewriteError(err)
 					return nil
 				}
-			} else if hdg, err := strconv.Atoi(command[1:]); err != nil {
-				rewriteError(err)
-				return nil
-			} else if err := sim.AssignHeading(&HeadingArgs{
-				ControllerToken: token,
-				Callsign:        callsign,
-				Heading:         hdg,
-				Turn:            av.TurnClosest,
-			}); err != nil {
-				rewriteError(err)
+			} else if strings.HasPrefix(command, "FH") {
+				headingStr := strings.TrimSpace(command[2:])
+				if hdg, err := strconv.Atoi(headingStr); err != nil {
+					rewriteError(err)
+					return nil
+				} else if err := sim.AssignHeading(&HeadingArgs{
+					ControllerToken: token,
+					Callsign:        callsign,
+					Heading:         hdg,
+					Turn:            av.TurnClosest,
+				}); err != nil {
+					rewriteError(err)
+					return nil
+				}
+			} else {
+				rewriteError(fmt.Errorf("invalid FH command format"))
 				return nil
 			}
-
 		case 'I':
 			if len(command) == 1 {
 				if err := sim.InterceptLocalizer(token, callsign); err != nil {
@@ -598,6 +602,12 @@ func (sd *Dispatcher) RunAircraftCommands(cmds *AircraftCommandsArgs, result *Ai
 			}
 
 		case 'R':
+			if command == "RNS" {
+				if err := sim.AssignSpeed(token, callsign, 0, false); err != nil {
+					rewriteError(err)
+					return nil
+				}
+			}
 			if l := len(command); l > 2 && command[l-1] == 'D' {
 				// turn right x degrees
 				if deg, err := strconv.Atoi(command[1 : l-1]); err != nil {
@@ -630,12 +640,6 @@ func (sd *Dispatcher) RunAircraftCommands(cmds *AircraftCommandsArgs, result *Ai
 		case 'S':
 			if command == "SS" {
 				if err := sim.SaySpeed(token, callsign); err != nil {
-					rewriteError(err)
-					return nil
-				}
-			}
-			if command == "RNS" {
-				if err := sim.AssignSpeed(token, callsign, 0, false); err != nil {
 					rewriteError(err)
 					return nil
 				}
