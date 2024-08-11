@@ -811,6 +811,13 @@
                     "from": "ZMA"
                 }
             ],
+            "VARZE": [
+                {
+                    "type": "route",
+                    "to": "ZJX",
+                    "from": "ZMA"
+                }
+            ],
             "JOKRS": [
                 {
                     "type": "route",
